@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+< lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Bug Report — Moon's Open Playground</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <main class="bug-page">
+
+
+        <!-- ========================================
+             BACK BUTTON
+        ========================================= -->
+
+        <button
+            class="back-button"
+            onclick="window.location.href='index.html'"
+        >
+            ← BACK
+        </button>
+
+
+
+        <!-- ========================================
+             HEADER
+        ========================================= -->
+
+        <section class="bug-header">
+
+            <div class="bug-icon">
+                🐛
+            </div>
+
+            <div class="bug-label">
+                MOON'S OPEN PLAYGROUND
+            </div>
+
+            <h1>
+                Bug Report
+            </h1>
+
+            <p>
+                Found something broken, strange, or
+                behaving differently than expected?
+            </p>
+
+            <p>
+                Tell us what happened and we'll investigate it.
+            </p>
+
+        </section>
+
+
+
+        <!-- ========================================
+             REPORT FORM
+        ========================================= -->
+
+        <form
+            id="bugReportForm"
+            class="bug-form"
+        >
+
+
+            <!-- Reporter -->
+
+            <div class="form-section">
+
+                <label for="reporterName">
+                    👤 Your Name / Username
+                </label>
+
+                <input
+                    type="text"
+                    id="reporterName"
+                    placeholder="e.g. Moon_999"
+                    maxlength="50"
+                >
+
+            </div>
+
+
+
+            <!-- Bug title -->
+
+            <div class="form-section">
+
+                <label for="bugTitle">
+                    🐛 What went wrong?
+                </label>
+
+                <input
+                    type="text"
+                    id="bugTitle"
+                    placeholder="Short description of the bug"
+                    maxlength="100"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- Platform -->
+
+            <div class="form-row">
+
+
+                <div class="form-section">
+
+                    <label for="platform">
+                        📱 Platform
+                    </label>
+
+                    <select id="platform">
+
+                        <option value="">
+                            Select platform
+                        </option>
+
+                        <option value="Android">
+                            Android
+                        </option>
+
+                        <option value="iPhone / iPad">
+                            iPhone / iPad
+                        </option>
+
+                        <option value="Windows">
+                            Windows
+                        </option>
+
+                        <option value="Mac">
+                            Mac
+                        </option>
+
+                        <option value="Linux">
+                            Linux
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Browser -->
+
+                <div class="form-section">
+
+                    <label for="browser">
+                        🌐 Browser
+                    </label>
+
+                    <select id="browser">
+
+                        <option value="">
+                            Select browser
+                        </option>
+
+                        <option value="Chrome">
+                            Chrome
+                        </option>
+
+                        <option value="Firefox">
+                            Firefox
+                        </option>
+
+                        <option value="Edge">
+                            Edge
+                        </option>
+
+                        <option value="Safari">
+                            Safari
+                        </option>
+
+                        <option value="Opera">
+                            Opera
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Description -->
+
+            <div class="form-section">
+
+                <label for="bugDescription">
+                    📋 Describe the problem
+                </label>
+
+                <textarea
+                    id="bugDescription"
+                    rows="7"
+                    placeholder="Explain what happened..."
+                    maxlength="2000"
+                    required
+                ></textarea>
+
+                <div class="character-count">
+                    <span id="descriptionCount">0</span>
+                    / 2000
+                </div>
+
+            </div>
+
+
+
+            <!-- Steps -->
+
+            <div class="form-section">
+
+                <label for="bugSteps">
+                    🔁 How can we reproduce it?
+                </label>
+
+                <textarea
+                    id="bugSteps"
+                    rows="5"
+                    placeholder="1. Open the playground&#10;2. Click...&#10;3. Something happens..."
+                    maxlength="1500"
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- Severity -->
+
+            <div class="form-section">
+
+                <label>
+                    ⚠️ How serious is the problem?
+                </label>
+
+
+                <div class="severity-options">
+
+
+                    <label class="severity-option">
+
+                        <input
+                            type="radio"
+                            name="severity"
+                            value="Minor"
+                            checked
+                        >
+
+                        <span>
+                            🟢 Minor
+                        </span>
+
+                    </label>
+
+
+                    <label class="severity-option">
+
+                        <input
+                            type="radio"
+                            name="severity"
+                            value="Major"
+                        >
+
+                        <span>
+                            🟡 Major
+                        </span>
+
+                    </label>
+
+
+                    <label class="severity-option">
+
+                        <input
+                            type="radio"
+                            name="severity"
+                            value="Critical"
+                        >
+
+                        <span>
+                            🔴 Critical
+                        </span>
+
+                    </label>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Submit -->
+
+            <button
+                type="submit"
+                class="submit-report"
+            >
+                🐛 SUBMIT BUG REPORT
+            </button>
+
+
+            <p class="form-note">
+                Please don't include passwords, private information,
+                or other sensitive data in your report.
+            </p>
+
+
+        </form>
+
+
+
+        <!-- ========================================
+             SUCCESS MESSAGE
+        ========================================= -->
+
+        <section
+            id="reportSuccess"
+            class="report-success"
+        >
+
+            <div class="success-icon">
+                🏴‍☠️
+            </div>
+
+            <h2>
+                Report Prepared!
+            </h2>
+
+            <p>
+                Your bug report has been collected locally.
+                We'll connect this to the actual reporting system next.
+            </p>
+
+            <button
+                onclick="location.reload()"
+                class="submit-report"
+            >
+                🐛 REPORT ANOTHER BUG
+            </button>
+
+        </section>
+
+
+
+        <!-- ========================================
+             FOOTER
+        ========================================= -->
+
+        <footer class="bug-footer">
+
+            <strong>
+                MOON'S OPEN PLAYGROUND
+            </strong>
+
+            <small>
+                Bug Report Center · Version 0.1
+            </small>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <script>
+
+        /* ========================================
+           DESCRIPTION CHARACTER COUNTER
+        ========================================= */
+
+        const description =
+            document.getElementById("bugDescription");
+
+        const descriptionCount =
+            document.getElementById("descriptionCount");
+
+
+        description.addEventListener("input", () => {
+
+            descriptionCount.textContent =
+                description.value.length;
+
+        });
+
+
+
+        /* ========================================
+           BUG REPORT
+        ========================================= */
+
+        const bugForm =
+            document.getElementById("bugReportForm");
+
+        const reportSuccess =
+            document.getElementById("reportSuccess");
+
+
+        bugForm.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+
+            const report = {
+
+                name:
+                    document.getElementById("reporterName").value,
+
+                title:
+                    document.getElementById("bugTitle").value,
+
+                platform:
+                    document.getElementById("platform").value,
+
+                browser:
+                    document.getElementById("browser").value,
+
+                description:
+                    document.getElementById("bugDescription").value,
+
+                steps:
+                    document.getElementById("bugSteps").value,
+
+                severity:
+                    document.querySelector(
+                        'input[name="severity"]:checked'
+                    ).value,
+
+                date:
+                    new Date().toISOString()
+
+            };
+
+
+            /*
+             * Save the report locally for now.
+             */
+
+            localStorage.setItem(
+                "lastBugReport",
+                JSON.stringify(report)
+            );
+
+
+            bugForm.style.display = "none";
+
+            reportSuccess.classList.add("show");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    </script>
+
+
+
+    <style>
+
+        /* ========================================
+           BUG REPORT PAGE
+        ======================================== */
+
+        .bug-page {
+
+            width: 100%;
+            min-height: 100vh;
+
+            padding:
+                25px
+                20px
+                60px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 20px;
+
+            background: #f6b6a6;
+
+            color: #542f2a;
+
+        }
+
+
+
+        /* ========================================
+           BACK BUTTON
+        ======================================== */
+
+        .back-button {
+
+            align-self: flex-start;
+
+            border: none;
+
+            border-radius: 16px;
+
+            padding:
+                10px
+                17px;
+
+            background: #542f2a;
+
+            color: #fff4df;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 12px
+                rgba(84,47,42,0.18);
+
+        }
+
+
+        .back-button:active {
+
+            transform:
+                translateY(3px);
+
+        }
+
+
+
+        /* ========================================
+           HEADER
+        ======================================== */
+
+        .bug-header {
+
+            width:
+                min(90vw, 650px);
+
+            text-align: center;
+
+            padding:
+                5px
+                10px
+                15px;
+
+        }
+
+
+        .bug-icon {
+
+            font-size: 65px;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .bug-label {
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            opacity: 0.5;
+
+        }
+
+
+        .bug-header h1 {
+
+            margin:
+                5px
+                0
+                10px;
+
+            font-size:
+                clamp(
+                    34px,
+                    9vw,
+                    52px
+                );
+
+            font-weight: 900;
+
+            color: #542f2a;
+
+        }
+
+
+        .bug-header p {
+
+            margin:
+                5px
+                auto;
+
+            max-width:
+                520px;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            opacity: 0.7;
+
+        }
+
+
+
+        /* ========================================
+           FORM
+        ======================================== */
+
+        .bug-form {
+
+            width:
+                min(90vw, 650px);
+
+            padding:
+                25px;
+
+            background:
+                #fff4df;
+
+            border-radius:
+                28px;
+
+            box-shadow:
+
+                0 12px 30px
+                rgba(84,47,42,0.13),
+
+                inset 0 1px 0
+                rgba(255,255,255,0.6);
+
+        }
+
+
+
+        /* ========================================
+           FORM SECTIONS
+        ======================================== */
+
+        .form-section {
+
+            position: relative;
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .form-section label {
+
+            display: block;
+
+            margin-bottom:
+                8px;
+
+            font-size:
+                13px;
+
+            font-weight:
+                900;
+
+        }
+
+
+
+        /* ========================================
+           INPUTS
+        ======================================== */
+
+        input[type="text"],
+        select,
+        textarea {
+
+            width: 100%;
+
+            border:
+                2px solid
+                rgba(84,47,42,0.14);
+
+            border-radius:
+                14px;
+
+            padding:
+                12px
+                13px;
+
+            background:
+                #fffaf1;
+
+            color:
+                #542f2a;
+
+            font-family:
+                Arial, sans-serif;
+
+            font-size:
+                14px;
+
+            outline:
+                none;
+
+            transition:
+                border-color
+                0.15s ease,
+
+                box-shadow
+                0.15s ease;
+
+        }
+
+
+        input[type="text"]:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color:
+                #d98b45;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(217,139,69,0.13);
+
+        }
+
+
+        textarea {
+
+            resize:
+                vertical;
+
+            min-height:
+                100px;
+
+            line-height:
+                1.5;
+
+        }
+
+
+        input::placeholder,
+        textarea::placeholder {
+
+            color:
+                #542f2a;
+
+            opacity:
+                0.35;
+
+        }
+
+
+
+        /* ========================================
+           TWO COLUMN ROW
+        ======================================== */
+
+        .form-row {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                15px;
+
+        }
+
+
+
+        /* ========================================
+           CHARACTER COUNT
+        ======================================== */
+
+        .character-count {
+
+            text-align:
+                right;
+
+            margin-top:
+                5px;
+
+            font-size:
+                10px;
+
+            opacity:
+                0.45;
+
+        }
+
+
+
+        /* ========================================
+           SEVERITY
+        ======================================== */
+
+        .severity-options {
+
+            display:
+                flex;
+
+            gap:
+                10px;
+
+            flex-wrap:
+                wrap;
+
+        }
+
+
+        .severity-option {
+
+            flex:
+                1;
+
+            min-width:
+                110px;
+
+            margin:
+                0 !important;
+
+        }
+
+
+        .severity-option input {
+
+            display:
+                none;
+
+        }
+
+
+        .severity-option span {
+
+            display:
+                block;
+
+            padding:
+                11px
+                8px;
+
+            text-align:
+                center;
+
+            border:
+                2px solid
+                rgba(84,47,42,0.12);
+
+            border-radius:
+                13px;
+
+            background:
+                #fffaf1;
+
+            font-size:
+                12px;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .severity-option input:checked + span {
+
+            border-color:
+                #d98b45;
+
+            background:
+                #ffe4a8;
+
+        }
+
+
+
+        /* ========================================
+           SUBMIT
+        ======================================== */
+
+        .submit-report {
+
+            width: 100%;
+
+            border:
+                none;
+
+            border-radius:
+                18px;
+
+            padding:
+                15px
+                20px;
+
+            background:
+                #542f2a;
+
+            color:
+                #fff4df;
+
+            font-size:
+                15px;
+
+            font-weight:
+                900;
+
+            cursor:
+                pointer;
+
+            box-shadow:
+                0 6px 0
+                rgba(0,0,0,0.15);
+
+            transition:
+                transform
+                0.1s ease,
+
+                box-shadow
+                0.1s ease;
+
+        }
+
+
+        .submit-report:active {
+
+            transform:
+                translateY(4px);
+
+            box-shadow:
+                0 2px 0
+                rgba(0,0,0,0.15);
+
+        }
+
+
+
+        /* ========================================
+           FORM NOTE
+        ======================================== */
+
+        .form-note {
+
+            margin:
+                15px
+                5px
+                0;
+
+            text-align:
+                center;
+
+            font-size:
+                10px;
+
+            line-height:
+                1.5;
+
+            opacity:
+                0.5;
+
+        }
+
+
+
+        /* ========================================
+           SUCCESS
+        ======================================== */
+
+        .report-success {
+
+            display:
+                none;
+
+            width:
+                min(90vw, 650px);
+
+            padding:
+                35px
+                25px;
+
+            text-align:
+                center;
+
+            background:
+                #fff4df;
+
+            border-radius:
+                28px;
+
+            box-shadow:
+                0 12px 30px
+                rgba(84,47,42,0.13);
+
+        }
+
+
+        .report-success.show {
+
+            display:
+                block;
+
+        }
+
+
+        .success-icon {
+
+            font-size:
+                60px;
+
+        }
+
+
+        .report-success h2 {
+
+            margin:
+                8px
+                0;
+
+            font-size:
+                25px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        .report-success p {
+
+            margin:
+                10px
+                auto
+                20px;
+
+            max-width:
+                450px;
+
+            font-size:
+                13px;
+
+            line-height:
+                1.6;
+
+            opacity:
+                0.7;
+
+
+        <!-- ========================================
+             FOOTER
+        ========================================= -->
+
+        <footer class="bug-footer">
+
+            <strong>
+                MOON'S OPEN PLAYGROUND
+            </strong>
+
+            <small>
+                Bug Report Center · Version 0.1
+            </small>
+
+        </footer>
+
+
+    </main>
+
+
+    <style>
+
+        /* ========================================
+           SUCCESS
+        ======================================== */
+
+        .report-success {
+
+            display: none;
+
+            width: min(90vw, 650px);
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            background: #fff4df;
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 12px 30px
+                rgba(84,47,42,0.13);
+
+        }
+
+
+        .report-success.show {
+            display: block;
+        }
+
+
+        .success-icon {
+            font-size: 60px;
+        }
+
+
+        .report-success h2 {
+
+            margin: 8px 0;
+
+            font-size: 25px;
+
+            font-weight: 900;
+
+        }
+
+
+        .report-success p {
+
+            margin: 10px auto 20px;
+
+            max-width: 450px;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            opacity: 0.7;
+
+        }
+
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        .bug-footer {
+
+            width: min(90vw, 650px);
+
+            padding: 15px;
+
+            text-align: center;
+
+            color: #542f2a;
+
+        }
+
+
+        .bug-footer strong {
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .bug-footer small {
+
+            display: block;
+
+            margin-top: 6px;
+
+            font-size: 10px;
+
+            opacity: 0.5;
+
+        }
+
+
+
+        /* ========================================
+           MOBILE
+        ======================================== */
+
+        @media (max-width: 500px) {
+
+            .bug-form {
+                padding: 20px;
+            }
+
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+
+            }
+
+
+            .severity-options {
+
+                flex-direction: column;
+
+            }
+
+
+            .severity-option {
+
+                min-width: 100%;
+
+            }
+
+        }
+
+    </style>
+
+
+</body>
+
+</html>

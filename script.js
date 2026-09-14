@@ -1371,3 +1371,83 @@ buyMeat.addEventListener(
 // ========================================
 
 loadLuffy();
+
+/* ========================================
+   🌙 SETTINGS MENU
+======================================== */
+
+const settingsButton =
+    document.getElementById("settingsButton");
+
+const settingsOverlay =
+    document.getElementById("settingsOverlay");
+
+const closeSettings =
+    document.getElementById("closeSettings");
+
+
+function openSettings() {
+    settingsOverlay.classList.add("show");
+    settingsButton.classList.add("hidden");
+}
+
+
+function closeSettingsMenu() {
+    settingsOverlay.classList.remove("show");
+    settingsButton.classList.remove("hidden");
+}
+
+
+/* Open settings */
+
+settingsButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+
+    openSettings();
+});
+
+
+/* Close with X */
+
+closeSettings.addEventListener("click", () => {
+    closeSettingsMenu();
+});
+
+
+/* Click outside the drawer */
+
+settingsOverlay.addEventListener("click", (event) => {
+
+    if (event.target === settingsOverlay) {
+        closeSettingsMenu();
+    }
+
+});
+
+
+/* ========================================
+   SETTINGS OPTIONS
+======================================== */
+
+document
+    .getElementById("settingsHome")
+    .addEventListener("click", () => {
+
+        closeSettingsMenu();
+
+    });
+
+
+document.getElementById("settingsHelp").addEventListener("click", () => {
+    window.location.href = "help.html";
+});
+
+
+document.getElementById("settingsHowTo").addEventListener("click", () => {
+    window.location.href = "how-to-use.html";
+});
+
+
+document.getElementById("settingsDiscord").addEventListener("click", () => {
+    window.location.href = "support.html";
+});

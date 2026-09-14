@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Support — Moon's Open Playground</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="support-page">
+
+        <!-- Back -->
+        <button
+            class="back-button"
+            onclick="window.location.href='index.html'"
+        >
+            ← BACK
+        </button>
+
+
+        <!-- Header -->
+        <section class="support-header">
+
+            <div class="support-icon">☕</div>
+
+            <h1>Support the Playground</h1>
+
+            <p>
+                Enjoying Moon's Open Playground?
+                You can support its little journey if you'd like.
+            </p>
+
+        </section>
+
+
+        <!-- Main donation card -->
+        <section class="coffee-card">
+
+            <div class="coffee-emoji">
+                ☕
+            </div>
+
+            <h2>Buy Us a Coffee</h2>
+
+            <p>
+                This playground is made just for fun.
+                If you enjoy it and want to support future
+                updates, you can buy the crew a coffee.
+            </p>
+
+            <div class="coffee-message">
+                🏴‍☠️ Every coffee helps keep the adventure going!
+            </div>
+
+            <button
+                class="coffee-button"
+                onclick="donateCoffee()"
+            >
+                ☕ DONATE A COFFEE
+            </button>
+
+        </section>
+
+
+        <!-- Discord -->
+        <section class="discord-card">
+
+            <div class="discord-icon">
+                💬
+            </div>
+
+            <h2>Join the Crew</h2>
+
+            <p>
+                Want to hang out, talk about the playground,
+                share ideas, or simply join the community?
+            </p>
+
+            <button
+                class="discord-button"
+                onclick="joinDiscord()"
+            >
+                💬 JOIN DISCORD
+            </button>
+
+        </section>
+
+
+        <!-- Small note -->
+        <section class="support-note">
+
+            <div>🏴‍☠️ THANK YOU, CAPTAIN!</div>
+
+            <p>
+                Whether you donate or simply enjoy the playground,
+                you're already part of the adventure.
+            </p>
+
+        </section>
+
+
+        <!-- Footer -->
+        <section class="support-footer">
+
+            <strong>MOON'S OPEN PLAYGROUND</strong>
+
+            <small>
+                Version 0.1
+            </small>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        function donateCoffee() {
+
+            /*
+             * Replace this with your actual
+             * donation/payment link later.
+             */
+
+            alert(
+                "☕ Coffee time!\n\n" +
+                "The donation link will be added soon."
+            );
+
+        }
+
+
+        function joinDiscord() {
+
+            /*
+             * Replace this with your actual
+             * Discord invite link later.
+             */
+
+            alert(
+                "💬 Discord\n\n" +
+                "The Discord server link will be added soon."
+            );
+
+        }
+
+    </script>
+
+
+    <style>
+
+        /* ========================================
+           SUPPORT PAGE
+        ======================================== */
+
+        .support-page {
+            width: 100%;
+            min-height: 100vh;
+
+            padding: 25px 20px 60px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 20px;
+
+            background: #f6b6a6;
+            color: #542f2a;
+        }
+
+
+        /* ========================================
+           BACK BUTTON
+        ======================================== */
+
+        .back-button {
+            align-self: flex-start;
+
+            border: none;
+            border-radius: 16px;
+
+            padding: 10px 17px;
+
+            background: #542f2a;
+            color: #fff4df;
+
+            font-size: 14px;
+            font-weight: 900;
+
+            cursor: pointer;
+
+            box-shadow: 0 5px 12px rgba(84,47,42,0.18);
+
+            transition: transform 0.15s ease;
+        }
+
+        .back-button:active {
+            transform: translateY(3px);
+        }
+
+
+        /* ========================================
+           HEADER
+        ======================================== */
+
+        .support-header {
+            width: min(90vw, 600px);
+
+            text-align: center;
+
+            padding: 5px 10px 10px;
+        }
+
+        .support-icon {
+            font-size: 62px;
+            margin-bottom: 5px;
+        }
+
+        .support-header h1 {
+            margin: 0;
+
+            color: #542f2a;
+
+            font-size: clamp(28px, 7vw, 44px);
+            font-weight: 900;
+
+            line-height: 1.15;
+        }
+
+        .support-header p {
+            max-width: 500px;
+
+            margin: 12px auto 0;
+
+            font-size: 14px;
+            line-height: 1.6;
+
+            opacity: 0.7;
+        }
+
+
+        /* ========================================
+           COFFEE CARD
+        ======================================== */
+
+        .coffee-card {
+            width: min(90vw, 600px);
+
+            padding: 30px 24px;
+
+            text-align: center;
+
+            background: #fff4df;
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 12px 28px rgba(84,47,42,0.13),
+                inset 0 1px 0 rgba(255,255,255,0.6);
+        }
+
+        .coffee-emoji {
+            font-size: 72px;
+
+            margin-bottom: 5px;
+        }
+
+        .coffee-card h2 {
+            margin: 0 0 10px;
+
+            font-size: 25px;
+            font-weight: 900;
+        }
+
+        .coffee-card p {
+            max-width: 450px;
+
+            margin: 0 auto;
+
+            font-size: 14px;
+            line-height: 1.7;
+
+            opacity: 0.75;
+        }
+
+
+        /* ========================================
+           COFFEE MESSAGE
+        ======================================== */
+
+        .coffee-message {
+            margin: 20px auto;
+
+            max-width: 440px;
+
+            padding: 12px 15px;
+
+            background: rgba(246,182,166,0.25);
+
+            border-radius: 15px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            line-height: 1.5;
+        }
+
+
+        /* ========================================
+           DONATION BUTTON
+        ======================================== */
+
+        .coffee-button {
+            border: none;
+
+            padding: 14px 23px;
+
+            border-radius: 18px;
+
+            background: #d98b45;
+            color: white;
+
+            font-size: 15px;
+            font-weight: 900;
+
+            cursor: pointer;
+
+            box-shadow: 0 6px 0 rgba(0,0,0,0.15);
+
+            transition:
+                transform 0.1s ease,
+                box-shadow 0.1s ease;
+        }
+
+        .coffee-button:active {
+            transform: translateY(4px);
+
+            box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+        }
+
+
+        /* ========================================
+           DISCORD
+        ======================================== */
+
+        .discord-card {
+            width: min(90vw, 600px);
+
+            padding: 25px 22px;
+
+            text-align: center;
+
+            background: rgba(255,244,223,0.72);
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 8px 20px rgba(84,47,42,0.08);
+        }
+
+        .discord-icon {
+            font-size: 42px;
+        }
+
+        .discord-card h2 {
+            margin: 8px 0;
+
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .discord-card p {
+            max-width: 450px;
+
+            margin: 0 auto 17px;
+
+            font-size: 13px;
+            line-height: 1.6;
+
+            opacity: 0.7;
+        }
+
+
+        /* Discord button */
+
+        .discord-button {
+            border: none;
+
+            padding: 13px 22px;
+
+            border-radius: 17px;
+
+            background: #542f2a;
+            color: #fff4df;
+
+            font-size: 14px;
+            font-weight: 900;
+
+            cursor: pointer;
+
+            box-shadow: 0 6px 0 rgba(0,0,0,0.15);
+
+            transition:
+                transform 0.1s ease,
+                box-shadow 0.1s ease;
+        }
+
+        .discord-button:active {
+            transform: translateY(4px);
+
+            box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+        }
+
+
+        /* ========================================
+           THANK YOU
+        ======================================== */
+
+        .support-note {
+            width: min(90vw, 600px);
+
+            padding: 18px 15px;
+
+            text-align: center;
+
+            color: #542f2a;
+        }
+
+        .support-note > div {
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .support-note p {
+            max-width: 430px;
+
+            margin: 8px auto 0;
+
+            font-size: 12px;
+            line-height: 1.6;
+
+            opacity: 0.65;
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        .support-footer {
+            width: min(90vw, 600px);
+
+            padding: 10px;
+
+            text-align: center;
+
+            color: #542f2a;
+        }
+
+        .support-footer small {
+            display: block;
+
+            margin-top: 6px;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+
+            opacity: 0.5;
+        }
+
+
+        /* ========================================
+           SMALL SCREENS
+        ======================================== */
+
+        @media (max-width: 400px) {
+
+            .coffee-card {
+                padding: 25px 17px;
+            }
+
+            .coffee-emoji {
+                font-size: 60px;
+            }
+
+            .coffee-card h2 {
+                font-size: 22px;
+            }
+
+        }
+
+    </style>
+
+</body>
+</html>

@@ -9,7 +9,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Moon's Open Heaven</title>
+    <title>Moon's Open Playground</title>
 
     <link
         rel="stylesheet"
@@ -19,166 +19,402 @@
 
 <body>
 
+    <!-- ========================================
+         🌙 SETTINGS
+    ======================================== -->
+
+    <button id="settingsButton" aria-label="Settings">
+        🌙
+    </button>
+
+    <div id="settingsOverlay">
+
+        <aside id="settingsPanel">
+
+            <div class="settings-header">
+
+                <h2>🌙 Settings</h2>
+
+                <button id="closeSettings">
+                    ✕
+                </button>
+
+            </div>
+
+            <div class="settings-menu">
+
+                <button
+                    class="settings-item"
+                    id="settingsHome"
+                >
+                    <span class="settings-icon">🏠</span>
+                    <span>Home</span>
+                </button>
+
+
+                <button
+                    class="settings-item"
+                    id="settingsHowTo"
+                >
+                    <span class="settings-icon">📖</span>
+                    <span>How to use?</span>
+                </button>
+
+              <button
+                    class="settings-item"
+                    id="settingsHelp"
+                >
+                    <span class="settings-icon">🐞</span>
+                    <span>Bug Reporting</span>
+              </button>
+
+                <button
+                    class="settings-item"
+                    id="settingsDiscord"
+                >
+                    <span class="settings-icon">💬</span>
+                    <span>Support Team</span>
+                </button>
+
+            </div>
+
+            <div class="settings-version">
+
+                <strong>MOON'S OPEN PLAYGROUND</strong>
+
+                <small>Version 0.1</small>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- ========================================
+         🌙 MAIN WEBSITE
+    ======================================== -->
+
     <main class="scene">
 
         <!-- Website Title -->
-        <h1>Moon's Open Heaven</h1>
+
+        <h1>
+            Moon's Open Playground
+        </h1>
 
 
-        <!-- Luffy's Box -->
+        <!-- ========================================
+             🍖 LUFFY'S BOX
+        ======================================== -->
+
         <div class="box">
 
-    <div id="luffySpeech" class="speech-bubble show">
-        🍖 MEAT! MEAT! MEAT!
-    </div>
+            <!-- Speech -->
 
-    <div class="box-header">
-
-        <div class="captain-status">
-
-            <div class="status-main">
-                <span class="online-dot"></span>
-                CAPTAIN ONLINE
+            <div
+                id="luffySpeech"
+                class="speech-bubble show"
+            >
+                🍖 MEAT! MEAT! MEAT!
             </div>
 
-            <div class="character-role">
-                STRAW HAT CAPTAIN
+
+            <!-- Header -->
+
+            <div class="box-header">
+
+                <div class="captain-status">
+
+                    <div class="status-main">
+
+                        <span class="online-dot"></span>
+
+                        CAPTAIN ONLINE
+
+                    </div>
+
+                    <div class="character-role">
+                        STRAW HAT CAPTAIN
+                    </div>
+
+                </div>
+
+
+                <div class="island-number">
+                    ISLAND No. 001
+                </div>
+
             </div>
 
+
+            <!-- Luffy -->
+
+            <canvas id="luffyCanvas"></canvas>
+
+
+            <!-- Reaction GIFs -->
+
+            <img
+                id="noseGif"
+                src="assets/luffy-nose.gif"
+            >
+
+            <img
+                id="meatLustGif"
+                src="assets/luffy-meat-lust.gif"
+            >
+
+            <img
+                id="meatDropGif"
+                src="assets/luffy-meat-drop.gif"
+            >
+
+            <img
+                id="eatingGif"
+                src="assets/luffy-eating.gif"
+            >
+
         </div>
 
-        <div class="island-number">
-            ISLAND No. 001
-        </div>
 
+        <!-- ========================================
+             🏴‍☠️ CAPTAIN PANEL
+        ======================================== -->
+
+        <div id="captainPanel">
+
+            <div class="captainPanelTitle">
+                🏴‍☠️ CAPTAIN PANEL
+            </div>
+
+
+            <!-- Mood -->
+
+            <div id="luffyMood">
+                ❤️ Mood: HAPPY
+            </div>
+
+
+            <!-- Hunger -->
+
+            <div id="hungerDisplay">
+
+                🍖 Hunger
+
+                <div id="hungerBar">
+
+                    <div id="hungerFill"></div>
+
+                </div>
+
+                <span id="hungerText">
+                    100%
+                </span>
+
+            </div>
+
+
+            <!-- Money + Meat -->
+
+            <div id="moneyDisplay">
+    <div class="currency-line">
+        💰 <span id="moneyAmount">100</span>
     </div>
-
-    <canvas id="luffyCanvas"></canvas>
-
-    <img id="noseGif" src="assets/luffy-nose.gif">
-    <img id="meatLustGif" src="assets/luffy-meat-lust.gif">
-    <img id="meatDropGif" src="assets/luffy-meat-drop.gif">
-    <img id="eatingGif" src="assets/luffy-eating.gif">
-
-        </div>
-
-        </div>
-
-        <!-- Luffy Mood -->
-        <div id="luffyMood">
-            ❤️ Mood: HAPPY
-        </div>
-
-</div>
-
-<div id="moneyDisplay">
-    💰 <span id="moneyAmount">100</span>
 
     <div id="meatDisplay">
         🍖 <span id="meatAmount">0</span>
     </div>
-</div>
-
-<div class="controls">
-
-    <button id="meatButton">
-        🍖 MEAT
-    </button>
-
-</div>
+            </div>
 
 
-<div id="meatLayer">
+            <!-- Meat Button -->
 
-    <div
-        id="meat"
-        class="meat"
-    >
-        🍖
-    </div>
+            <div class="controls">
 
-</div>
+                <button id="meatButton">
+                    🍖 MEAT
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================
+             🍖 DRAGGABLE MEAT
+        ======================================== -->
+
+        <div id="meatLayer">
+
+            <div
+                id="meat"
+                class="meat"
+            >
+                🍖
+            </div>
+
+        </div>
+
     </main>
 
 
-    <!-- ============================= -->
-    <!-- GIF FRAME SYSTEM               -->
-    <!-- ============================= -->
-<!-- 🏪 STORE BUTTON -->
+    <!-- ========================================
+         🏪 STORE BUTTON
+    ======================================== -->
 
-<div class="store-button-container">
-    <button id="storeButton">
-        🏪 STORE
-    </button>
-</div>
-  <div class="daily-button-container">
-    <button id="dailyButton">🎁 DAILY</button>
-  </div>
+    <div class="store-button-container">
 
+        <button id="storeButton">
 
-<!-- 🏪 FLOATING STORE -->
+            <span class="store-icon">
+                🏪
+            </span>
 
-<div id="storeOverlay">
+            <span class="store-title">
+                STORE
+            </span>
 
-    <div id="storePanel">
+            <span class="store-description">
+                Click the shop to buy exclusive items for Luffy!
+            </span>
 
-        <button id="closeStore">
-            ✕
         </button>
 
-        <h2>🏪 Luffy's Store</h2>
-
-        <div class="store-items">
-
-            <div class="store-item">
-    <div class="item-icon">🍖</div>
-
-    <div class="item-info">
-        <h3>Meat Pack</h3>
-        <p>5 pieces of meat for our hungry captain.</p>
     </div>
 
-    <div class="item-purchase">
-        <div class="item-price">💰 25</div>
-        <button class="buy-button" id="buyMeat">
-            BUY
+
+    <!-- ========================================
+         🎁 DAILY BUTTON
+    ======================================== -->
+
+    <div class="daily-button-container">
+
+        <button id="dailyButton">
+            🎁 DAILY
         </button>
+
     </div>
-            </div>
 
 
-            <div class="store-item">
+    <!-- ========================================
+         🏪 STORE OVERLAY
+    ======================================== -->
 
-                <div class="item-icon">
-                    ❤️
+    <div id="storeOverlay">
+
+        <div id="storePanel">
+
+            <button id="closeStore">
+                ✕
+            </button>
+
+
+            <h2>
+                🏪 Luffy's Store
+            </h2>
+
+
+            <div class="store-items">
+
+
+                <!-- Meat Pack -->
+
+                <div class="store-item">
+
+                    <div class="item-icon">
+                        🍖
+                    </div>
+
+
+                    <div class="item-info">
+
+                        <h3>
+                            Meat Pack
+                        </h3>
+
+                        <p>
+                            5 pieces of meat for our hungry captain.
+                        </p>
+
+                    </div>
+
+
+                    <div class="item-purchase">
+
+                        <div class="item-price">
+                            💰 25
+                        </div>
+
+                        <button
+                            class="buy-button"
+                            id="buyMeat"
+                        >
+                            BUY
+                        </button>
+
+                    </div>
+
                 </div>
 
-                <div class="item-info">
-                    <h3>Happiness</h3>
-                    <p>Make Luffy happier.</p>
+
+                <!-- Happiness -->
+
+                <div class="store-item">
+
+                    <div class="item-icon">
+                        ❤️
+                    </div>
+
+
+                    <div class="item-info">
+
+                        <h3>
+                            Happiness
+                        </h3>
+
+                        <p>
+                            Make Luffy happier.
+                        </p>
+
+                    </div>
+
+
+                    <div class="item-price">
+                        💰 50
+                    </div>
+
                 </div>
 
-                <div class="item-price">
-                    💰 50
+
+                <!-- Mystery -->
+
+                <div class="store-item">
+
+                    <div class="item-icon">
+                        🎁
+                    </div>
+
+
+                    <div class="item-info">
+
+                        <h3>
+                            Mystery Item
+                        </h3>
+
+                        <p>
+                            Something mysterious...
+                        </p>
+
+                    </div>
+
+
+                    <div class="item-price">
+                        💰 100
+                    </div>
+
                 </div>
 
-            </div>
-
-
-            <div class="store-item">
-
-                <div class="item-icon">
-                    🎁
-                </div>
-
-                <div class="item-info">
-                    <h3>Mystery Item</h3>
-                    <p>Something mysterious...</p>
-                </div>
-
-                <div class="item-price">
-                    💰 100
-                </div>
 
             </div>
 
@@ -186,33 +422,53 @@
 
     </div>
 
-</div>
 
-  <div id="dailyOverlay">
+    <!-- ========================================
+         🎁 DAILY OVERLAY
+    ======================================== -->
 
-    <div id="dailyPanel">
+    <div id="dailyOverlay">
 
-        <button id="closeDaily">✕</button>
+        <div id="dailyPanel">
 
-        <h2>🎁 Daily Treasure</h2>
+            <button id="closeDaily">
+                ✕
+            </button>
 
-        <p>Ahoy! Your daily treasure has arrived!</p>
 
-        <div id="dailyReward">
-            💰 +50
+            <h2>
+                🎁 Daily Treasure
+            </h2>
+
+
+            <p>
+                Ahoy! Your daily treasure has arrived!
+            </p>
+
+
+            <div id="dailyReward">
+                💰 +50
+            </div>
+
+
+            <button id="claimDaily">
+                CLAIM REWARD
+            </button>
+
         </div>
 
-        <button id="claimDaily">
-            CLAIM REWARD
-        </button>
-
     </div>
-  </div>
-  
+
+
+    <!-- ========================================
+         📜 JAVASCRIPT
+    ======================================== -->
+
     <script
-    type="module"
-    src="script.js"
-></script>
+        type="module"
+        src="script.js"
+    ></script>
 
 </body>
+
 </html>

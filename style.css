@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     min-height: 100vh;
     overflow-x: hidden;
@@ -11,6 +12,8 @@ body {
     font-family: Arial, sans-serif;
     background: #f6b6a6;
 }
+
+
 
 .scene {
     width: 100%;
@@ -493,6 +496,11 @@ h1 {
     right: 20px;
     z-index: 1000;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
     padding: 9px 16px;
 
     background: #ffe4a8;
@@ -500,7 +508,7 @@ h1 {
     border-radius: 20px;
 
     color: #8a5a20;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 800;
 
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
@@ -508,6 +516,21 @@ h1 {
     user-select: none;
 }
 
+.currency-line,
+#meatDisplay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.currency-line,
+#meatDisplay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
 
 /* =========================
    DAILY BUTTON
@@ -892,4 +915,559 @@ h1 {
         0 4px 10px rgba(84, 47, 42, 0.08);
 
     white-space: nowrap;
+}
+
+/* ========================================
+   🌙 SETTINGS BUTTON
+======================================== */
+
+#settingsButton {
+    position: fixed;
+
+    top: 18px;
+    left: 18px;
+
+    width: 46px;
+    height: 46px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #542f2a;
+    color: #fff4df;
+
+    font-size: 30px;
+    font-weight: 900;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 2000;
+
+    box-shadow:
+        0 6px 16px rgba(84, 47, 42, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+#settingsButton:active {
+    transform: scale(0.88) rotate(-15deg);
+}
+
+
+/* Hide the moon button when drawer opens */
+
+#settingsButton.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* ========================================
+   SETTINGS OVERLAY
+======================================== */
+
+#settingsOverlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(84, 47, 42, 0.14);
+
+    backdrop-filter: blur(2px);
+
+    z-index: 1999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+#settingsOverlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ========================================
+   LEFT DRAWER
+======================================== */
+
+#settingsPanel {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 50vw;
+    min-width: 250px;
+    max-width: 340px;
+
+    height: 100vh;
+
+    background: #fff4df;
+
+    box-shadow:
+        12px 0 30px rgba(84, 47, 42, 0.18);
+
+    transform: translateX(-100%);
+
+    transition:
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+    overflow-y: auto;
+}
+
+#settingsOverlay.show #settingsPanel {
+    transform: translateX(0);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.settings-header {
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 18px;
+
+    background: #ffd0c3;
+
+    border-bottom:
+        2px solid rgba(84, 47, 42, 0.12);
+
+    color: #542f2a;
+}
+
+.settings-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.settings-title > span {
+    font-size: 25px;
+}
+
+.settings-header h2 {
+    margin: 0;
+
+    font-size: 19px;
+    font-weight: 900;
+}
+
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+#closeSettings {
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(84, 47, 42, 0.1);
+
+    color: #542f2a;
+
+    font-size: 18px;
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+#closeSettings:active {
+    transform: scale(0.9);
+}
+
+
+/* ========================================
+   MENU
+======================================== */
+
+.settings-menu {
+    display: flex;
+    flex-direction: column;
+
+    padding: 12px;
+
+    gap: 5px;
+}
+
+.settings-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 15px 14px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: transparent;
+
+    color: #542f2a;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.1s ease;
+}
+
+.settings-item:hover {
+    background: rgba(84, 47, 42, 0.08);
+}
+
+.settings-item:active {
+    transform: translateX(4px);
+}
+
+.settings-icon {
+    width: 25px;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+/* ========================================
+   VERSION
+======================================== */
+
+.settings-version {
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-top:
+        1px solid rgba(84, 47, 42, 0.12);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    color: #542f2a;
+
+    opacity: 0.6;
+}
+
+.settings-version strong {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.settings-version small {
+    font-size: 10px;
+}
+
+/* ========================================
+   🏴‍☠️ CAPTAIN PANEL
+======================================== */
+
+#captainPanel {
+    width: min(90vw, 500px);
+
+    padding: 18px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 208, 195, 0.72);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 12px 28px rgba(84, 47, 42, 0.12),
+        inset 0 1px 0 rgba(255,255,255,0.45);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #542f2a;
+}
+
+
+/* Panel title */
+
+.captainPanelTitle {
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    opacity: 0.75;
+
+    margin-bottom: 2px;
+}
+
+
+/* Mood */
+
+#luffyMood {
+    padding: 7px 14px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.4);
+
+    color: #542f2a;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    box-shadow:
+        0 4px 10px rgba(84,47,42,0.08);
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   🍖 HUNGER
+======================================== */
+
+#hungerDisplay {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+    font-weight: 900;
+}
+
+#hungerBar {
+    flex: 1;
+
+    height: 12px;
+
+    background: rgba(84,47,42,0.12);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#hungerFill {
+    width: 100%;
+    height: 100%;
+
+    background: #d98b45;
+
+    border-radius: inherit;
+
+    transition: width 0.35s ease;
+}
+
+#hungerText {
+    min-width: 38px;
+
+    text-align: right;
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   🍖 MEAT BUTTON
+======================================== */
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
+
+#meatButton {
+    border: none;
+
+    padding: 11px 25px;
+
+    border-radius: 16px;
+
+    background: #542f2a;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.1s ease,
+        box-shadow 0.1s ease;
+}
+
+#meatButton:active {
+    transform: translateY(4px);
+
+    box-shadow:
+        0 1px 0 rgba(0,0,0,0.15);
+}
+
+
+/* ========================================
+   🏪 STORE CARD
+======================================== */
+
+.store-button-container {
+    width: min(90vw, 500px);
+
+    margin: 0 auto 25px;
+}
+
+#storeButton {
+    width: 100%;
+
+    min-height: 150px;
+
+    border: none;
+
+    border-radius: 28px;
+
+    background: #fff4df;
+
+    color: #542f2a;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 28px rgba(84,47,42,0.13),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+#storeButton:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 32px rgba(84,47,42,0.17);
+}
+
+#storeButton:active {
+    transform: translateY(2px);
+}
+
+
+/* Big shop icon */
+
+.store-icon {
+    font-size: 52px;
+
+    line-height: 1;
+}
+
+
+/* STORE */
+
+.store-title {
+    font-size: 21px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+/* Description */
+
+.store-description {
+    max-width: 280px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    opacity: 0.6;
+}
+
+
+/* ========================================
+   🌙 STATIC SETTINGS BUTTON
+======================================== */
+
+#settingsButton {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    width: 46px;
+    height: 46px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #542f2a;
+    color: #fff4df;
+
+    font-size: 26px;
+    font-weight: 900;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 6px 16px rgba(84, 47, 42, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
 }
