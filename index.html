@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Moon's Open Heaven</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <main class="scene">
+
+        <!-- Website Title -->
+        <h1>Moon's Open Heaven</h1>
+
+
+        <!-- Luffy's Box -->
+        <div class="box">
+
+    <div id="luffySpeech" class="speech-bubble show">
+        🍖 MEAT! MEAT! MEAT!
+    </div>
+
+    <div class="box-header">
+
+        <div class="captain-status">
+
+            <div class="status-main">
+                <span class="online-dot"></span>
+                CAPTAIN ONLINE
+            </div>
+
+            <div class="character-role">
+                STRAW HAT CAPTAIN
+            </div>
+
+        </div>
+
+        <div class="island-number">
+            ISLAND No. 001
+        </div>
+
+    </div>
+
+    <canvas id="luffyCanvas"></canvas>
+
+    <img id="noseGif" src="assets/luffy-nose.gif">
+    <img id="meatLustGif" src="assets/luffy-meat-lust.gif">
+    <img id="meatDropGif" src="assets/luffy-meat-drop.gif">
+    <img id="eatingGif" src="assets/luffy-eating.gif">
+
+        </div>
+
+        </div>
+
+        <!-- Luffy Mood -->
+        <div id="luffyMood">
+            ❤️ Mood: HAPPY
+        </div>
+
+</div>
+
+<div id="moneyDisplay">
+    💰 <span id="moneyAmount">100</span>
+
+    <div id="meatDisplay">
+        🍖 <span id="meatAmount">0</span>
+    </div>
+</div>
+
+<div class="controls">
+
+    <button id="meatButton">
+        🍖 MEAT
+    </button>
+
+</div>
+
+
+<div id="meatLayer">
+
+    <div
+        id="meat"
+        class="meat"
+    >
+        🍖
+    </div>
+
+</div>
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- GIF FRAME SYSTEM               -->
+    <!-- ============================= -->
+<!-- 🏪 STORE BUTTON -->
+
+<div class="store-button-container">
+    <button id="storeButton">
+        🏪 STORE
+    </button>
+</div>
+  <div class="daily-button-container">
+    <button id="dailyButton">🎁 DAILY</button>
+  </div>
+
+
+<!-- 🏪 FLOATING STORE -->
+
+<div id="storeOverlay">
+
+    <div id="storePanel">
+
+        <button id="closeStore">
+            ✕
+        </button>
+
+        <h2>🏪 Luffy's Store</h2>
+
+        <div class="store-items">
+
+            <div class="store-item">
+    <div class="item-icon">🍖</div>
+
+    <div class="item-info">
+        <h3>Meat Pack</h3>
+        <p>5 pieces of meat for our hungry captain.</p>
+    </div>
+
+    <div class="item-purchase">
+        <div class="item-price">💰 25</div>
+        <button class="buy-button" id="buyMeat">
+            BUY
+        </button>
+    </div>
+            </div>
+
+
+            <div class="store-item">
+
+                <div class="item-icon">
+                    ❤️
+                </div>
+
+                <div class="item-info">
+                    <h3>Happiness</h3>
+                    <p>Make Luffy happier.</p>
+                </div>
+
+                <div class="item-price">
+                    💰 50
+                </div>
+
+            </div>
+
+
+            <div class="store-item">
+
+                <div class="item-icon">
+                    🎁
+                </div>
+
+                <div class="item-info">
+                    <h3>Mystery Item</h3>
+                    <p>Something mysterious...</p>
+                </div>
+
+                <div class="item-price">
+                    💰 100
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <div id="dailyOverlay">
+
+    <div id="dailyPanel">
+
+        <button id="closeDaily">✕</button>
+
+        <h2>🎁 Daily Treasure</h2>
+
+        <p>Ahoy! Your daily treasure has arrived!</p>
+
+        <div id="dailyReward">
+            💰 +50
+        </div>
+
+        <button id="claimDaily">
+            CLAIM REWARD
+        </button>
+
+    </div>
+  </div>
+  
+    <script
+    type="module"
+    src="script.js"
+></script>
+
+</body>
+</html>
